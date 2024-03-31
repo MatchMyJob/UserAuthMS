@@ -1,0 +1,15 @@
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\bin\Debug\net8.0\Aplication.deps.json
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\bin\Debug\net8.0\Aplication.dll
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\bin\Debug\net8.0\Aplication.pdb
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\bin\Debug\net8.0\Domain.dll
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\bin\Debug\net8.0\Domain.pdb
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.csproj.AssemblyReference.cache
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.AssemblyInfoInputs.cache
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.AssemblyInfo.cs
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.csproj.CoreCompileInputs.cache
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.csproj.Up2Date
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.dll
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\refint\Aplication.dll
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\Aplication.pdb
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\Security\Aplication\obj\Debug\net8.0\ref\Aplication.dll
