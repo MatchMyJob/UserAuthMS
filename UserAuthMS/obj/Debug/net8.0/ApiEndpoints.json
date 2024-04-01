@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "UserAutdhMS.Controllers.UserController",
+    "ContainingType": "UserAuthMS.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "api/v1/User/login",
     "HttpMethod": "POST",
@@ -35,7 +35,7 @@
     ]
   },
   {
-    "ContainingType": "UserAutdhMS.Controllers.UserController",
+    "ContainingType": "UserAuthMS.Controllers.UserController",
     "Method": "Register",
     "RelativePath": "api/v1/User/register",
     "HttpMethod": "POST",
@@ -50,7 +50,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Application.DTO.Response.HTTPResponse\u00601[[Domain.Entities.User, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Application.DTO.Response.HTTPResponse\u00601[[Application.DTO.Response.UserResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

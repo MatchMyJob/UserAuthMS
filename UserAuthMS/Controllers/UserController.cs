@@ -11,12 +11,12 @@ namespace UserAuthMS.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository userRepository;
+        private readonly IUserRepository _userRepository;
         private HTTPResponse<Object> _response;
 
         public UserController(IUserRepository userRepository)
         {
-            this.userRepository = userRepository;
+            this._userRepository = userRepository;
             _response = new();
         }
 
@@ -25,7 +25,7 @@ namespace UserAuthMS.Controllers
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            var loginResponse = await userRepository.Login(request);
+            var loginResponse = await _userRepository.Login(request);
             if (loginResponse.User == null && string.IsNullOrEmpty(loginResponse.Token))
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -40,11 +40,11 @@ namespace UserAuthMS.Controllers
         }
 
         [HttpPost("register")]
-        [ProducesResponseType(typeof(HTTPResponse<User>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(HTTPResponse<UserResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
-            bool isUniqueUser = userRepository.IsUniqueUser(request.UserName);
+            bool isUniqueUser = _userRepository.IsUniqueUser(request.UserName);
 
             if (!isUniqueUser)
             {
@@ -53,7 +53,7 @@ namespace UserAuthMS.Controllers
                 _response.Message.Add("El usuario ya existe.");
                 return BadRequest(_response);
             }
-            var user = await userRepository.Register(request);
+            var user = await _userRepository.Register(request);
             if (user == null)
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
@@ -63,6 +63,7 @@ namespace UserAuthMS.Controllers
             }
             _response.StatusCode = HttpStatusCode.OK;
             _response.Status = "OK";
+            _response.Result = user;
             return Ok(_response);
         }
     }

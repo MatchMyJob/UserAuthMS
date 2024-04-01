@@ -10,6 +10,6 @@ namespace Application.Interface
 
         Task<LoginResponse> Login(LoginRequest request);
 
-        Task<User> Register(RegisterRequest request);
+        Task<UserResponse> Register(RegisterRequest request);
     }
 }

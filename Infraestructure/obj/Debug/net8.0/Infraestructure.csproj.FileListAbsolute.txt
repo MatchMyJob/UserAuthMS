@@ -36,3 +36,4 @@ D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuth
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Infraestructure\obj\Debug\net8.0\Infraestructure.pdb
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Infraestructure\obj\Debug\net8.0\Infraestructure.genruntimeconfig.cache
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Infraestructure\obj\Debug\net8.0\ref\Infraestructure.dll
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Infraestructure\obj\Debug\net8.0\Infraestructure.sourcelink.json
