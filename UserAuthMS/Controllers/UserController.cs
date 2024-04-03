@@ -1,7 +1,8 @@
-﻿using Application.DTO.Request;
+﻿using Application.DTO.Error;
+using Application.DTO.Request;
 using Application.DTO.Response;
 using Application.Interface;
-using Domain.Entities;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -11,60 +12,63 @@ namespace UserAuthMS.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserService _userService;
+        private readonly IMapper _mapper;
         private HTTPResponse<Object> _response;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserService userService, IMapper mapper)
         {
-            this._userRepository = userRepository;
+            _userService = userService;
+            _mapper = mapper;
             _response = new();
         }
 
         [HttpPost("login")]
         [ProducesResponseType(typeof(HTTPResponse<LoginResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            var loginResponse = await _userRepository.Login(request);
-            if (loginResponse.User == null && string.IsNullOrEmpty(loginResponse.Token))
+            try
             {
-                _response.StatusCode = HttpStatusCode.BadRequest;
-                _response.Status = "BadRequest";
-                _response.Message.Add("UserName o Password incorrectos.");
-                return BadRequest(_response);
+                _response.Result = await _userService.Login(request);
+                _response.StatusCode = HttpStatusCode.OK;
+                _response.Status = "OK";
+                return new JsonResult(_response) { StatusCode = 200 };
             }
-            _response.StatusCode = HttpStatusCode.OK;
-            _response.Status = "Created";
-            _response.Result = loginResponse;
-            return Ok(_response);
+            catch (Exception e)
+            {
+                if (e is HTTPError)
+                {
+                    return new JsonResult(_mapper.Map<HTTPResponse<string>>(e)) { StatusCode = (int)((HTTPError)e).StatusCode };
+                }
+                return new JsonResult(_mapper.Map<HTTPResponse<string>>(new InternalServerErrorException("A server error has occurred."))) { StatusCode = 500 };
+            }
         }
 
         [HttpPost("register")]
         [ProducesResponseType(typeof(HTTPResponse<UserResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status409Conflict)]
+        [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
-            bool isUniqueUser = _userRepository.IsUniqueUser(request.UserName);
-
-            if (!isUniqueUser)
+            try
             {
-                _response.StatusCode = HttpStatusCode.BadRequest;
-                _response.Status = "BadRequest";
-                _response.Message.Add("El usuario ya existe.");
-                return BadRequest(_response);
+                _response.Result = await _userService.Register(request);
+                _response.StatusCode = HttpStatusCode.OK;
+                _response.Status = "OK";
+                return new JsonResult(_response) { StatusCode = 200 };
             }
-            var user = await _userRepository.Register(request);
-            if (user == null)
+            catch (Exception e)
             {
-                _response.StatusCode = HttpStatusCode.BadRequest;
-                _response.Status = "BadRequest";
-                _response.Message.Add("Error al registrar el usuario.");
-                return BadRequest(_response);
+                if (e is HTTPError)
+                {
+                    return new JsonResult(_mapper.Map<HTTPResponse<string>>(e)) { StatusCode = (int)((HTTPError)e).StatusCode };
+                }
+                return new JsonResult(_mapper.Map<HTTPResponse<string>>(new InternalServerErrorException("A server error has occurred."))) { StatusCode = 500 };
             }
-            _response.StatusCode = HttpStatusCode.OK;
-            _response.Status = "OK";
-            _response.Result = user;
-            return Ok(_response);
         }
     }
 }

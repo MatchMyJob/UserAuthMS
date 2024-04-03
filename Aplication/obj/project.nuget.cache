@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jeEytOYNCj/s7AgFl3GtEdBRnMhFe3S2KowZxWHXnXffFBqlAWkomxs72r/8uJZi3BjzhoVxN9Rj4V4bfxetMg==",
+  "dgSpecHash": "qtAYKI8knzQfxfaWpJRxBcruzroSwDJ/cyNeJwd6aGISy/9YuO6uAJEMBZlabD5oHmFXLxlVEv/0gZxm2qDN7w==",
   "success": true,
   "projectFilePath": "D:\\Ingeniería Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\W10-PC\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\W10-PC\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\W10-PC\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\W10-PC\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\W10-PC\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.4\\microsoft.aspnet.identity.entityframework.2.2.4.nupkg.sha512",
@@ -27,6 +29,16 @@
     "C:\\Users\\W10-PC\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requiere AutoMapper (= 12.0.1), pero la versión AutoMapper 13.0.1 ya se resolvió.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

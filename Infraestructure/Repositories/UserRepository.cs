@@ -1,4 +1,5 @@
 ﻿
+using Application.DTO.Error;
 using Application.DTO.Request;
 using Application.DTO.Response;
 using Application.Interface;
@@ -29,69 +30,73 @@ namespace Infraestructure.Repositories
             _roleManager = roleManager;
         }
 
-        public bool IsUniqueUser(string userName)
+        public async Task<User> GetByUserName(string userName)
         {
-            var user = _context.Users.FirstOrDefault(x => x.UserName.ToLower() == userName.ToLower());
-
-            if(user == null)
+            try
             {
-                return true;
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName.ToLower() == userName.ToLower());
+                if(user == null) { throw new NotFoundException("El Usuario " + userName + " no fue encontrado."); }
+                return user;
             }
-            return false;
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public async Task<LoginResponse> Login(LoginRequest request)
+        public async Task<LoginResponse> Login(User user, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName.ToLower() == request.UserName.ToLower());
+            try
+            {
+                if (!await _userManager.CheckPasswordAsync(user, password)) //comprueba el password
+                {
+                    throw new BadRequestException("Password inválido.");
+                }
 
-            bool isValid = await _userManager.CheckPasswordAsync(user, request.Password);
-            
-            if(user == null || !isValid)
-            {
-                return new LoginResponse() 
+                // si existe el user generamos el JWT
+                var roles = await _userManager.GetRolesAsync(user);
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_secretKey);
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    Token = "",
-                    User = null
-                };
-            }
-            // si existe el user generamos el JWT
-            var roles = await _userManager.GetRolesAsync(user);
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_secretKey);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, user.UserName.ToString()),
                     new Claim(ClaimTypes.Role, roles.FirstOrDefault())
-                }),
-                Expires = DateTime.UtcNow.AddDays(1),
-                SigningCredentials = new(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            LoginResponse response = new()
-            {
-                User = new UserResponse()
+                    }),
+                    Expires = DateTime.UtcNow.AddDays(1),
+                    SigningCredentials = new(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                LoginResponse response = new()
                 {
-                    Id = user.Id,
-                    UserName = user.UserName
-                },
-                Token = tokenHandler.WriteToken(token)
-            };
-            return response;
+                    User = new UserResponse()
+                    {
+                        Id = user.Id,
+                        UserName = user.UserName
+                    },
+                    Token = tokenHandler.WriteToken(token)
+                };
+                return response;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public async Task<UserResponse> Register(RegisterRequest request)
         {
-            User user = new()
-            {
-                UserName = request.UserName.ToUpper(),
-                Email = request.Email,
-                NormalizedEmail = request.Email.ToUpper(),
-            };
             try
             {
+                User user = new()
+                {
+                    UserName = request.UserName,
+                    Email = request.Email,
+                    NormalizedEmail = request.Email.ToUpper(),
+                };
+
                 var result = await _userManager.CreateAsync(user, request.Password);
                 if (result.Succeeded)
                 {
@@ -100,20 +105,57 @@ namespace Infraestructure.Repositories
                         await _roleManager.CreateAsync(new IdentityRole("admin"));
                     }
                     await _userManager.AddToRoleAsync(user, "admin");
-                    var userApp = _context.Users.FirstOrDefault(u => u.UserName == request.UserName);
+                    var userApp = await _context.Users.FirstOrDefaultAsync(u => u.UserName == request.UserName);
                     return new UserResponse()
                     {
                         Id = userApp.Id,
                         UserName = userApp.UserName
                     };
                 }
+                else
+                {
+                    await ValidationPasswordException(result.Errors);
+                    return new UserResponse();
+                }
             }
             catch (Exception)
             {
                 throw;
             }
+        }
 
-            return new UserResponse();
+        private async Task ValidationPasswordException(IEnumerable<IdentityError> errors)
+        {
+            try
+            {
+                foreach (var error in errors)
+                {
+                    if (error.Code == "PasswordRequiresNonAlphanumeric")
+                    {
+                        throw new BadRequestException("El password requiere al menos un carácter no alfanumérico.");
+                    }
+                    else if (error.Code == "PasswordRequiresDigit")
+                    {
+                        throw new BadRequestException("El password requiere al menos un dígito.");
+                    }
+                    else if (error.Code == "PasswordRequiresUpper")
+                    {
+                        throw new BadRequestException("El password requiere al menos una letra mayúscula.");
+                    }
+                    else if (error.Code == "DuplicateUserName")
+                    {
+                        throw new ConflictException("Existe un usuario con el mismo UserName, por favor, detalle otro.");
+                    }
+                    else
+                    {
+                        throw new InternalServerErrorException(error.ToString());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

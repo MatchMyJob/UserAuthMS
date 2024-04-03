@@ -301,3 +301,5 @@ D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuth
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\UserAuthMS\bin\Debug\net8.0\EntityFramework.dll
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\UserAuthMS\bin\Debug\net8.0\Microsoft.AspNet.Identity.Core.dll
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\UserAuthMS\bin\Debug\net8.0\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\UserAuthMS\bin\Debug\net8.0\AutoMapper.dll
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\UserAuthMS\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

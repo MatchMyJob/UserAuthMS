@@ -1,4 +1,6 @@
+using Application.DTO.Config;
 using Application.Interface;
+using Application.UseCase.Services;
 using Domain.Entities;
 using Infraestructure.Persistence;
 using Infraestructure.Repositories;
@@ -39,8 +41,17 @@ builder.Services.AddCors(options =>
     });
 });
 
+var config = new AutoMapper.MapperConfiguration(
+    options =>
+    {
+        options.AllowNullDestinationValues = true;
+        options.AllowNullCollections = true;
+        options.AddProfile(new AutoMapperProfile());
+    });
+builder.Services.AddSingleton(config.CreateMapper());
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 
 var app = builder.Build();
