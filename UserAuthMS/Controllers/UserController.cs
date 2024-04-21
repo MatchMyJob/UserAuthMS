@@ -3,6 +3,7 @@ using Application.DTO.Request;
 using Application.DTO.Response;
 using Application.Interface;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -48,7 +49,7 @@ namespace UserAuthMS.Controllers
         }
 
         [HttpPost("register")]
-        [ProducesResponseType(typeof(HTTPResponse<UserResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status409Conflict)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status500InternalServerError)]
@@ -56,9 +57,11 @@ namespace UserAuthMS.Controllers
         {
             try
             {
-                _response.Result = await _userService.Register(request);
+                await _userService.Register(request);
+                _response.Result = null;
                 _response.StatusCode = HttpStatusCode.OK;
                 _response.Status = "OK";
+                _response.Message = "User registrado exitosamente";
                 return new JsonResult(_response) { StatusCode = 200 };
             }
             catch (Exception e)

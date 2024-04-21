@@ -3,21 +3,40 @@
   "WorkspaceRootPath": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\usecase\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E8054C5-395A-4BB5-8208-7C0C7100BBAE}|..\\Infraestructure\\Infraestructure.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\infraestructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\userauthms\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\userauthms\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\userauthms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Migrations\\20240421164802_init1.1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\usecase\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E8054C5-395A-4BB5-8208-7C0C7100BBAE}|..\\Infraestructure\\Infraestructure.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\infraestructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E8054C5-395A-4BB5-8208-7C0C7100BBAE}|..\\Infraestructure\\Infraestructure.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\infraestructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\dto\\request\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\dto\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\dto\\response\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\dto\\response\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\userauthms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -51,7 +70,81 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240421164802_init1.1.cs",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Migrations\\20240421164802_init1.1.cs",
+              "RelativeDocumentMoniker": "..\\Infraestructure\\Migrations\\20240421164802_init1.1.cs",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Migrations\\20240421164802_init1.1.cs",
+              "RelativeToolTip": "..\\Infraestructure\\Migrations\\20240421164802_init1.1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T16:48:03.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "..\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "RelativeToolTip": "..\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T04:50:01.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Request\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "..\\Aplication\\DTO\\Request\\LoginRequest.cs",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Request\\LoginRequest.cs",
+              "RelativeToolTip": "..\\Aplication\\DTO\\Request\\LoginRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T04:44:32.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Response\\UserResponse.cs",
+              "RelativeDocumentMoniker": "..\\Aplication\\DTO\\Response\\UserResponse.cs",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Response\\UserResponse.cs",
+              "RelativeToolTip": "..\\Aplication\\DTO\\Response\\UserResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T04:39:26.769Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Request\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "..\\Aplication\\DTO\\Request\\RegisterRequest.cs",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Request\\RegisterRequest.cs",
+              "RelativeToolTip": "..\\Aplication\\DTO\\Request\\RegisterRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T04:38:16.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-07T08:36:02.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "HTTPResponse.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Response\\HTTPResponse.cs",
               "RelativeDocumentMoniker": "..\\Aplication\\DTO\\Response\\HTTPResponse.cs",
@@ -59,12 +152,11 @@
               "RelativeToolTip": "..\\Aplication\\DTO\\Response\\HTTPResponse.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T00:10:51.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T00:10:51.687Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "AutoMapperProfile.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Config\\AutoMapperProfile.cs",
               "RelativeDocumentMoniker": "..\\Aplication\\DTO\\Config\\AutoMapperProfile.cs",
@@ -72,12 +164,11 @@
               "RelativeToolTip": "..\\Aplication\\DTO\\Config\\AutoMapperProfile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T00:00:15.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T00:00:15.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\Interface\\IUserRepository.cs",
               "RelativeDocumentMoniker": "..\\Aplication\\Interface\\IUserRepository.cs",
@@ -85,51 +176,49 @@
               "RelativeToolTip": "..\\Aplication\\Interface\\IUserRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T23:22:40.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-01T23:22:40.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAAA6AAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAIwCoAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T23:17:37.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-01T23:17:37.092Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAAwD0AAABGAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowDsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T23:08:14.696Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\UseCase\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "..\\Aplication\\UseCase\\Services\\UserService.cs",
               "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\UseCase\\Services\\UserService.cs",
               "RelativeToolTip": "..\\Aplication\\UseCase\\Services\\UserService.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAA5wDMAAAAJAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAApwCkAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T23:00:27.953Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\Interface\\IUserService.cs",
               "RelativeDocumentMoniker": "..\\Aplication\\Interface\\IUserService.cs",
@@ -137,25 +226,24 @@
               "RelativeToolTip": "..\\Aplication\\Interface\\IUserService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T22:54:23.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-01T22:54:23.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "..\\Infraestructure\\Repositories\\UserRepository.cs",
               "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "..\\Infraestructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAwwGwAAAAtAAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAUwHUAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T22:52:52.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Persistence\\AppDbContext.cs",
               "RelativeDocumentMoniker": "..\\Infraestructure\\Persistence\\AppDbContext.cs",
@@ -163,8 +251,7 @@
               "RelativeToolTip": "..\\Infraestructure\\Persistence\\AppDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T21:22:05.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-01T21:22:05.556Z"
             }
           ]
         }

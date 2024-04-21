@@ -19,7 +19,8 @@ namespace Application.UseCase.Services
         {
             try
             {
-                var user = await _userRepository.GetByUserName(request.UserName);
+                IsValidEmail(request.Email);
+                var user = await _userRepository.GetByEmail(request.Email);
 
                 return await _userRepository.Login(user, request.Password);
             }
@@ -33,10 +34,7 @@ namespace Application.UseCase.Services
         {
             try
             {
-                if (!IsValidEmail(request.Email))
-                {
-                    throw new BadRequestException("Ingrese un Email válido.");
-                }
+                IsValidEmail(request.Email);
                 return await _userRepository.Register(request);
             }
             catch (Exception)
@@ -45,10 +43,13 @@ namespace Application.UseCase.Services
             }
         }
 
-        private bool IsValidEmail(string email)
+        private void IsValidEmail(string email)
         {
             string pattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
-            return Regex.IsMatch(email, pattern);
+            if (!Regex.IsMatch(email, pattern))
+            {
+                throw new BadRequestException("Ingrese un Email válido.");
+            }
         }
     }
 }

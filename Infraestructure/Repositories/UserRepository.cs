@@ -30,12 +30,12 @@ namespace Infraestructure.Repositories
             _roleManager = roleManager;
         }
 
-        public async Task<User> GetByUserName(string userName)
+        public async Task<User> GetByEmail(string email)
         {
             try
             {
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName.ToLower() == userName.ToLower());
-                if(user == null) { throw new NotFoundException("El Usuario " + userName + " no fue encontrado."); }
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
+                if(user == null) { throw new NotFoundException("El Usuario con el email: " + email + " no fue encontrado."); }
                 return user;
             }
             catch (Exception)
@@ -62,7 +62,6 @@ namespace Infraestructure.Repositories
                     Subject = new ClaimsIdentity(new Claim[]
                     {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(ClaimTypes.Name, user.UserName.ToString()),
                     new Claim(ClaimTypes.Role, roles.FirstOrDefault())
                     }),
                     Expires = DateTime.UtcNow.AddDays(1),
@@ -71,11 +70,6 @@ namespace Infraestructure.Repositories
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 LoginResponse response = new()
                 {
-                    User = new UserResponse()
-                    {
-                        Id = user.Id,
-                        UserName = user.UserName
-                    },
                     Token = tokenHandler.WriteToken(token)
                 };
                 return response;
@@ -88,39 +82,67 @@ namespace Infraestructure.Repositories
 
         public async Task<UserResponse> Register(RegisterRequest request)
         {
-            try
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                User user = new()
+                try
                 {
-                    UserName = request.UserName,
-                    Email = request.Email,
-                    NormalizedEmail = request.Email.ToUpper(),
-                };
-
-                var result = await _userManager.CreateAsync(user, request.Password);
-                if (result.Succeeded)
-                {
-                    if (!_roleManager.RoleExistsAsync("admin").GetAwaiter().GetResult())
+                    User user = new()
                     {
-                        await _roleManager.CreateAsync(new IdentityRole("admin"));
-                    }
-                    await _userManager.AddToRoleAsync(user, "admin");
-                    var userApp = await _context.Users.FirstOrDefaultAsync(u => u.UserName == request.UserName);
-                    return new UserResponse()
-                    {
-                        Id = userApp.Id,
-                        UserName = userApp.UserName
+                        UserName = request.Email,
+                        Email = request.Email,
+                        NormalizedEmail = request.Email.ToUpper(),
                     };
+                    {
+
+                    }
+                    var result = await _userManager.CreateAsync(user, request.Password);
+                    if (result.Succeeded)
+                    {
+                        await ValidationRole(request);
+                        await _userManager.AddToRoleAsync(user, request.Rol);
+                        var userApp = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+
+                        await transaction.CommitAsync();
+                        return new UserResponse();
+                    }
+                    else
+                    {
+                        await ValidationPasswordException(result.Errors);
+                        await transaction.CommitAsync();
+                        return new UserResponse();
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    await ValidationPasswordException(result.Errors);
-                    return new UserResponse();
+                    await transaction.RollbackAsync();
+                    throw;
                 }
-            }
-            catch (Exception)
+            } 
+        }
+
+
+        private async Task ValidationRole(RegisterRequest request)
+        {
+            if (!_roleManager.RoleExistsAsync("admin").GetAwaiter().GetResult())
             {
-                throw;
+                await _roleManager.CreateAsync(new IdentityRole("admin"));
+            }
+            if (!_roleManager.RoleExistsAsync("company").GetAwaiter().GetResult())
+            {
+                await _roleManager.CreateAsync(new IdentityRole("company"));
+            }
+            if (!_roleManager.RoleExistsAsync("jobuser").GetAwaiter().GetResult())
+            {
+                await _roleManager.CreateAsync(new IdentityRole("jobuser"));
+            }
+
+            if (!_roleManager.RoleExistsAsync(request.Rol).GetAwaiter().GetResult())
+            {
+                throw new BadRequestException("El tipo de Rol: " + request.Rol + " no existe.");
+            }
+            if (request.Rol.ToUpper() == "ADMIN")
+            {
+                throw new UnauthorizedException("No tiene los permisos para crear un usuario de tipo " + request.Rol.ToUpper());
             }
         }
 
@@ -144,7 +166,7 @@ namespace Infraestructure.Repositories
                     }
                     else if (error.Code == "DuplicateUserName")
                     {
-                        throw new ConflictException("Existe un usuario con el mismo UserName, por favor, detalle otro.");
+                        throw new ConflictException("Existe un usuario con el mismo email, por favor, detalle otro.");
                     }
                     else
                     {
@@ -157,5 +179,6 @@ namespace Infraestructure.Repositories
                 throw;
             }
         }
+
     }
 }
