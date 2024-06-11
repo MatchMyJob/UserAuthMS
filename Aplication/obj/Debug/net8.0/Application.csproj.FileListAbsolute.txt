@@ -23,9 +23,9 @@ D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuth
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Application.AssemblyInfo.cs
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Application.sourcelink.json
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Application.dll
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\refint\Application.dll
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Application.pdb
 D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\ref\Application.dll
-D:\Ingeniería Informatica\1 - Proyecto de Software\Proyecto integrador\UserAuthMS\Aplication\obj\Debug\net8.0\Application.sourcelink.json

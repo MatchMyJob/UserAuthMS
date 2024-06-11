@@ -82,6 +82,9 @@ namespace Infraestructure.Repositories
 
         public async Task<UserResponse> Register(RegisterRequest request)
         {
+            var userExists = await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower() == request.Email.ToLower());
+            if (userExists != null) { throw new ConflictException("El email: " + request.Email + " ya se encuentra en uso."); }
+
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
@@ -99,7 +102,8 @@ namespace Infraestructure.Repositories
                     if (result.Succeeded)
                     {
                         await ValidationRole(request);
-                        await _userManager.AddToRoleAsync(user, request.Rol);
+                        var role = await _roleManager.FindByIdAsync(request.Rol);
+                        await _userManager.AddToRoleAsync(user, role.Name);
                         var userApp = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
 
                         await transaction.CommitAsync();
@@ -123,26 +127,36 @@ namespace Infraestructure.Repositories
 
         private async Task ValidationRole(RegisterRequest request)
         {
-            if (!_roleManager.RoleExistsAsync("admin").GetAwaiter().GetResult())
-            {
-                await _roleManager.CreateAsync(new IdentityRole("admin"));
-            }
-            if (!_roleManager.RoleExistsAsync("company").GetAwaiter().GetResult())
-            {
-                await _roleManager.CreateAsync(new IdentityRole("company"));
-            }
-            if (!_roleManager.RoleExistsAsync("jobuser").GetAwaiter().GetResult())
-            {
-                await _roleManager.CreateAsync(new IdentityRole("jobuser"));
-            }
+            //if (!_roleManager.RoleExistsAsync("admin").GetAwaiter().GetResult())
+            //{
+            //    await _roleManager.CreateAsync(new IdentityRole("admin"));
+            //}
+            //if (!_roleManager.RoleExistsAsync("company").GetAwaiter().GetResult())
+            //{
+            //    await _roleManager.CreateAsync(new IdentityRole("company"));
+            //}
+            //if (!_roleManager.RoleExistsAsync("jobuser").GetAwaiter().GetResult())
+            //{
+            //    await _roleManager.CreateAsync(new IdentityRole("jobuser"));
+            //}
 
-            if (!_roleManager.RoleExistsAsync(request.Rol).GetAwaiter().GetResult())
+            //if (!_roleManager.RoleExistsAsync(request.Rol).GetAwaiter().GetResult())
+            //{
+            //    throw new BadRequestException("El tipo de Rol: " + request.Rol + " no existe.");
+            //}
+            //if (request.Rol.ToUpper() == "ADMIN")
+            //{
+            //    throw new UnauthorizedException("No tiene los permisos para crear un usuario de tipo " + request.Rol.ToUpper());
+            //}
+            var role = await _roleManager.FindByIdAsync(request.Rol);
+
+            if (role == null)
             {
-                throw new BadRequestException("El tipo de Rol: " + request.Rol + " no existe.");
+                throw new BadRequestException("Ingrese correctamente el ID del Rol.");
             }
-            if (request.Rol.ToUpper() == "ADMIN")
+            if (role.Id.ToLower() == "2048b194-4cda-4320-8b72-c169b4788fe9".ToLower())
             {
-                throw new UnauthorizedException("No tiene los permisos para crear un usuario de tipo " + request.Rol.ToUpper());
+                throw new UnauthorizedException("No tiene los permisos para crear un usuario de tipo ADMIN");
             }
         }
 

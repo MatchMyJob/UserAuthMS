@@ -2,7 +2,7 @@
   {
     "ContainingType": "UserAuthMS.Controllers.UserController",
     "Method": "Login",
-    "RelativePath": "api/v1/User/login",
+    "RelativePath": "api/v1/User/Login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -55,7 +55,7 @@
   {
     "ContainingType": "UserAuthMS.Controllers.UserController",
     "Method": "Register",
-    "RelativePath": "api/v1/User/register",
+    "RelativePath": "api/v1/User/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

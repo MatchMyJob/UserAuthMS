@@ -3,7 +3,6 @@ using Application.DTO.Request;
 using Application.DTO.Response;
 using Application.Interface;
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -24,7 +23,7 @@ namespace UserAuthMS.Controllers
             _response = new();
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         [ProducesResponseType(typeof(HTTPResponse<LoginResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status404NotFound)]
@@ -48,7 +47,7 @@ namespace UserAuthMS.Controllers
             }
         }
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(HTTPResponse<string>), StatusCodes.Status409Conflict)]
