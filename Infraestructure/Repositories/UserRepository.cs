@@ -70,7 +70,8 @@ namespace Infraestructure.Repositories
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 LoginResponse response = new()
                 {
-                    Token = tokenHandler.WriteToken(token)
+                    Token = tokenHandler.WriteToken(token),
+                    Role = roles.FirstOrDefault()
                 };
                 return response;
             }

@@ -9,6 +9,13 @@
       "AbsoluteMoniker": "D:0:0:{8E8054C5-395A-4BB5-8208-7C0C7100BBAE}|..\\Infraestructure\\Infraestructure.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\infraestructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0115B756-E3DE-4737-A78F-D8812C8A5E78}|..\\Aplication\\Application.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\aplication\\dto\\response\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\userauthms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03DFFA41-DB9E-4F26-B021-4C9AA9294ECC}|UserAuthMS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8E8054C5-395A-4BB5-8208-7C0C7100BBAE}|..\\Infraestructure\\Infraestructure.csproj|d:\\ingenier\u00EDa informatica\\1 - proyecto de software\\proyecto integrador\\userauthms\\infraestructure\\migrations\\20240601235203_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -32,6 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "..\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "RelativeToolTip": "..\\Aplication\\DTO\\Response\\LoginResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T14:24:51.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\UserAuthMS\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAAwGUAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T21:19:28.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "20240601235203_init.cs",
               "DocumentMoniker": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Migrations\\20240601235203_init.cs",
               "RelativeDocumentMoniker": "..\\Infraestructure\\Migrations\\20240601235203_init.cs",
@@ -49,9 +82,10 @@
               "RelativeDocumentMoniker": "..\\Infraestructure\\Repositories\\UserRepository.cs",
               "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "..\\Infraestructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAIwAAAAAAAAAAAAMwJwAAABKAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAhwEsAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T23:32:09.257Z"
+              "WhenOpened": "2024-06-01T23:32:09.257Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -61,7 +95,7 @@
               "RelativeDocumentMoniker": "..\\Infraestructure\\Persistence\\AppDbContext.cs",
               "ToolTip": "D:\\Ingenier\u00EDa Informatica\\1 - Proyecto de Software\\Proyecto integrador\\UserAuthMS\\Infraestructure\\Persistence\\AppDbContext.cs",
               "RelativeToolTip": "..\\Infraestructure\\Persistence\\AppDbContext.cs",
-              "ViewState": "AQIAAI8AAAAAAAAAAAAMwJ4AAABAAAAA",
+              "ViewState": "AQIAAJEAAAAAAAAAAAAAAKkAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-01T23:28:07.385Z",
               "EditorCaption": ""
